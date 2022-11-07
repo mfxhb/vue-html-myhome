@@ -1,0 +1,6 @@
+{
+  // 在扩展组件输入 @recommended 安装这些插件
+  "recommendations": [
+    "Vue.volar"
+  ]
+}

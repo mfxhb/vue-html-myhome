@@ -1,0 +1,17 @@
+{
+  // "thisattribute": {
+  //   "body": [
+  //     "${1|this.$xlb_imageToBase64,this.CONF_OSSBaseip,this.GOTO_PageFn,this.$xlb_asyncSleep,this.$xlb_staticEdit,this.$xlb_errmessage|}"
+  //   ],
+  //   "prefix": "thisk",
+  //   "scope": "typescript,javascript"
+  // },
+  // 路由注释
+  // "csszs": {
+  //   "body": [
+  //     "${1|'var(--cus-btn-color)' 按钮active时的边框色|}"
+  //   ],
+  //   "prefix": "cssk",
+  //   "scope": "typescript,javascript,vue,less"
+  // },
+}
