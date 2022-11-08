@@ -1,7 +1,7 @@
 /*
  * @Author: BORING GHOST
  * @Date: 2022-11-07 09:46:31
- * @LastEditTime: 2022-11-07 16:35:14
+ * @LastEditTime: 2022-11-08 14:54:21
  * @Description:
  */
 import { createApp } from "vue";
@@ -13,11 +13,15 @@ import { useConfig } from "./config/config"; // 全局配置
 
 // 全局组件
 import cusButton from "./components/cusbtn/cusbtn.vue";
+import sider from "./components/sider/sider.vue";
+import appMain from "./components/main/main.vue";
 
 import App from "./App.vue";
 
 const app = createApp(App);
 app.use(TDesign);
 app.component("cus-button", cusButton);
+app.component("cus-sider", sider);
+app.component("cus-main", appMain);
 app.use(useConfig);
 app.mount("#app");

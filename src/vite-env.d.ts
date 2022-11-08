@@ -1,7 +1,7 @@
 /*
  * @Author: mfxhb
  * @Date: 2022-11-07 09:46:31
- * @LastEditTime: 2022-11-07 15:09:56
+ * @LastEditTime: 2022-11-08 16:25:04
  * @Description:
  */
 /// <reference types="vite/client" />
@@ -12,3 +12,4 @@ declare module "*.vue" {
   const component: DefineComponent<{}, {}, any>;
   export default component;
 }
+declare module "*.js";

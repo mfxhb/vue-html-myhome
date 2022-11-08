@@ -11,6 +11,35 @@ html {
   //   no-repeat;
   background-color: @backgroundColor;
   height: 100vh;
+  width: 100vw;
   color: @text-color;
   overflow: hidden;
+  scroll-behavior: smooth;
+  cursor: url("../../assets/images/x1.cur"), auto;
+}
+// 鼠标
+a,
+.sakana-box,
+.sakana-character,
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: url("../../assets/images/x2.cur"), auto !important;
+}
+// 定义滚动条样式（高宽及背景）
+::-webkit-scrollbar {
+  width: 14px;
+  background: @backgroundColor;
+}
+::-webkit-scrollbar-thumb {
+  background-color: @theme-color-1;
+}
+
+html .sakana-box {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  transform-origin: 100% 100%; /* 从右下开始变换 */
 }

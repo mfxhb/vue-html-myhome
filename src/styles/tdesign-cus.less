@@ -1,12 +1,28 @@
-:root {
-  --cus-btn-color: transparent; // actions下按钮边框色
-}
+@btn-border-size: 4px; // 按钮边框大小
 
 .t-button {
-  border: 3px solid transparent;
+  position: relative;
+  padding: 5px 10px;
+  overflow: unset;
+  margin: @btn-border-size;
+  --active-border-color: #21898d;
+  &:active {
+    &::after {
+      border: @btn-border-size solid var(--active-border-color);
+    }
+  }
+}
+.t-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--td-radius-default);
+  left: (0 - @btn-border-size);
+  top: (0 - @btn-border-size);
+  border: @btn-border-size solid rgba(0, 0, 0, 0);
 }
 
-.t-button:active,
-.custom-button:active {
+.t-button:active {
   border-color: var(--cus-btn-color) !important;
 }
