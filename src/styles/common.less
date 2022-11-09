@@ -3,6 +3,47 @@
   src: url("../../assets/font/JetBrains Mono Medium Nerd Font Complete Mono_0.ttf");
 }
 
+/* 按钮改造 */
+.cus-button {
+  --cus-button-hover-bg: #008050;
+  --cus-button-border-color: #92d2ba;
+  --cus-button-default-bg: #00965e;
+  border-radius: @cus-round;
+  color: @text-light;
+  background-color: var(--cus-button-default-bg);
+  border: 0;
+  padding: 5px 10px;
+  position: relative;
+  &::after {
+    top: calc(0px - @border-btn-w + 2px);
+    left: calc(0px - @border-btn-w + 2px);
+    content: "";
+    display: none;
+    position: absolute;
+    border-radius: (@cus-round + 5px);
+    width: calc(100% - 3px);
+    height: calc(100% - 3px);
+    border: @border-btn-w solid var(--cus-button-border-color);
+  }
+  &:hover {
+    background-color: var(--cus-button-hover-bg);
+  }
+  &:focus {
+    background-color: var(--cus-button-hover-bg);
+    &::after {
+      display: block;
+    }
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    margin-right: 5px;
+  }
+}
 body,
 html {
   font-family: Jet-mono;
@@ -16,6 +57,9 @@ html {
   overflow: hidden;
   scroll-behavior: smooth;
   cursor: url("../../assets/images/x1.cur"), auto;
+}
+button {
+  font-family: Jet-mono;
 }
 // 鼠标
 a,

@@ -1,18 +1,14 @@
 <!--
  * @Author: mfxhb
  * @Date: 2022-11-07 09:46:31
- * @LastEditTime: 2022-11-08 16:57:37
+ * @LastEditTime: 2022-11-09 15:48:30
  * @Description: 
 -->
 <template>
-  <div>
-    <!-- 标题 -->
-    <t-divider class="app-title">
-      <h3>{{ welcomeText }}</h3>
-    </t-divider>
+  <div class="app">
+    <!-- 导航栏 -->
+    <cus-nav></cus-nav>
     <div class="content">
-      <!-- 侧边栏 -->
-      <cus-sider></cus-sider>
       <!-- 主内容 -->
       <cus-main></cus-main>
     </div>
@@ -21,9 +17,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject } from "vue";
-import { CONFIG_KEY } from "./config/config";
+import { defineComponent } from "vue";
 import Sakana from "./sakala.js";
+import { windowClick } from "./utils/wrench";
 
 export default defineComponent({
   name: "App",
@@ -33,31 +29,25 @@ export default defineComponent({
       scale: 0.3, // 缩放倍数
       canSwitchCharacter: true, // 允许换角色
     });
+    // qk 监听鼠标点击事件
+    window.addEventListener("click", windowClick);
+  },
+  unmounted() {
+    // qk 销毁鼠标事件
+    window.removeEventListener("click", windowClick);
   },
   setup() {
-    const { welcomeText } = inject(CONFIG_KEY, { welcomeText: "" });
-    return {
-      welcomeText,
-    };
+    return {};
   },
 });
 </script>
 
 <style lang="less">
-.app-title {
-  --td-border-level-1-color: @text-color;
-  margin: 0;
-  height: @app-title-h;
-}
-
-h3 {
-  text-align: center;
-  text-shadow: 0px 6px 5px #4b6584;
-}
-
-.content {
+.app {
+  padding: 10px 0 0 0;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 </style>
