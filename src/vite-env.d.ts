@@ -1,7 +1,7 @@
 /*
  * @Author: mfxhb
  * @Date: 2022-11-07 09:46:31
- * @LastEditTime: 2022-11-08 16:25:04
+ * @LastEditTime: 2022-11-10 16:17:26
  * @Description:
  */
 /// <reference types="vite/client" />
@@ -13,3 +13,6 @@ declare module "*.vue" {
   export default component;
 }
 declare module "*.js";
+
+declare module jQuery {}
+declare const $: any;

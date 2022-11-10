@@ -1,7 +1,7 @@
 /*
  * @Author: mfxhb
  * @Date: 2022-11-07 15:59:12
- * @LastEditTime: 2022-11-09 16:46:56
+ * @LastEditTime: 2022-11-10 13:11:12
  * @Description:
  */
 export default {
@@ -30,4 +30,11 @@ export default {
   // 边框特效
   "@border-w": "3px", // 宽
   "@border-btn-w": "5px", // 给button单独设置了一个宽度
+  // select
+  "@select-bd-bg": "#008050", // 背景色
+  "@select-font-color": "@text-light", // 默认颜色
+  "@select-bd-hover-bg": "@theme-color-3", // hover时的背景色
+  "@select-bd-selected-bg": "@theme-color-1", // 选中时的背景色
+  "@select-border-color": "#92d2ba", // 边框颜色
+  "@select-hover-color": "@theme-color-1", // hover时的颜色
 };

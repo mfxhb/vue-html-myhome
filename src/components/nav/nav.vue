@@ -1,7 +1,7 @@
 <!--
  * @Author: mfxhb
  * @Date: 2022-11-08 14:35:05
- * @LastEditTime: 2022-11-09 15:16:49
+ * @LastEditTime: 2022-11-10 11:43:44
  * @Description: 
 -->
 <template>
@@ -13,26 +13,37 @@
       <!-- 头像 -->
       <li class="touxiang"></li>
       <!-- 标题 -->
-      <li class="item">
-        <cus-select></cus-select>
-      </li>
-      <li class="item">
-        <cus-select></cus-select>
-      </li>
+      <template v-for="item in navList" :key="item.name">
+        <li class="item">
+          <cus-select
+            :nameLabel="item.name"
+            :isOpenRoundMargin="false"
+            :selectList="item.list"
+            @selected="selected"
+          ></cus-select>
+        </li>
+      </template>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, ref } from "vue";
+import { defineComponent, inject, ref, readonly, Ref } from "vue";
 import { CONFIG_KEY } from "../../config/config";
+import { navListConf } from "./wrench";
 
 export default defineComponent({
   name: "NavPage",
   setup() {
+    // qk 变量
     const { welcomeText } = inject(CONFIG_KEY, { welcomeText: "" });
-    const current = ref(0);
-    return { welcomeText, current };
+    // nav列表
+    const navList = navListConf;
+    // qk 方法
+    const selected = (value: string) => {
+      console.log("当前选中了:", value);
+    };
+    return { welcomeText, navList, selected };
   },
 });
 </script>
@@ -44,13 +55,15 @@ export default defineComponent({
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
+  li {
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
   .item {
     height: 45%;
-    margin-bottom: calc(15px + @border-w);
-    margin-top: @border-w;
-    margin-left: @border-w;
-    margin-right: @border-w;
+    margin-bottom: 15px;
+    margin-right: 0;
     border-radius: @cus-round;
   }
 

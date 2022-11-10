@@ -1,7 +1,7 @@
 <!--
  * @Author: mfxhb
  * @Date: 2022-11-07 09:46:31
- * @LastEditTime: 2022-11-09 15:48:30
+ * @LastEditTime: 2022-11-10 16:28:00
  * @Description: 
 -->
 <template>
@@ -13,13 +13,17 @@
       <cus-main></cus-main>
     </div>
     <div class="sakana-box"></div>
+    <!-- 提示 -->
+    <div class="tiptext">
+      JieShi:许多地方用的是英文或者拼音,因为我用的字体在这两个环境下显示的特别的舒服!
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, inject, onMounted } from "vue";
 import Sakana from "./sakala.js";
-import { windowClick } from "./utils/wrench";
+import { windowClick, openClickCur } from "./utils/wrench";
 
 export default defineComponent({
   name: "App",
@@ -31,12 +35,17 @@ export default defineComponent({
     });
     // qk 监听鼠标点击事件
     window.addEventListener("click", windowClick);
+    //
   },
   unmounted() {
     // qk 销毁鼠标事件
     window.removeEventListener("click", windowClick);
   },
   setup() {
+    const $ = inject("jQuery") as any;
+    onMounted(() => {
+      openClickCur($);
+    });
     return {};
   },
 });
@@ -49,5 +58,13 @@ export default defineComponent({
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  .tiptext {
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    font-size: 14px;
+    color: #d1d8e0;
+    user-select: none;
+  }
 }
 </style>
