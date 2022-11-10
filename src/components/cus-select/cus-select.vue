@@ -1,7 +1,7 @@
 <!--
  * @Author: mfxhb
  * @Date: 2022-11-09 10:20:32
- * @LastEditTime: 2022-11-10 13:14:21
+ * @LastEditTime: 2022-11-10 19:59:21
  * @Description: dsa
  * bg: 背景色
  * bg_hover: hover状态下的背景色
@@ -161,6 +161,7 @@ export default defineComponent({
       margin-bottom: 5px;
       padding: 5px;
       text-align: center;
+      user-select: none;
       border-radius: @cus-round;
       font-weight: 700;
       &:hover {

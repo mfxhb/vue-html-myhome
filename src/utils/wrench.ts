@@ -1,10 +1,10 @@
 /*
  * @Author: mfxhb
  * @Date: 2022-11-09 14:27:06
- * @LastEditTime: 2022-11-10 17:00:05
+ * @LastEditTime: 2022-11-10 19:58:26
  * @Description:
  */
-
+import { emoJs } from "./emojs";
 /**
  * todo 清除其它有边框特效的自定义select元素
  * @param {string} classname
@@ -43,10 +43,10 @@ export const windowClick = function (event: MouseEvent): void {
 /**
  * todo 获取一个随机数
  */
-function randomNumber(max: number, min: number): number {
-  const maxnum = max + 1;
-  const num = Math.floor(Math.random() * maxnum + min);
-  return num;
+function randomNumber(numlist: number[] | string[]): number | string {
+  const maxnum = numlist.length;
+  const num = Math.floor(Math.random() * (maxnum - 0) + 0);
+  return numlist[num];
 }
 /**
  * todo 开启鼠标特效
@@ -68,20 +68,33 @@ export const openClickCur = function ($: any) {
       }
     }
     if (check) {
-      var textstr = String.fromCodePoint(0x1f469);
+      // var textstr = String.fromCodePoint(randomNumber(emoJs));
+      var textstr = randomNumber(emoJs);
       var $i = $("<span/>").text(textstr);
       var x = e.pageX,
         y = e.pageY;
-      const yc = randomNumber(183, -100);
-      const xc = randomNumber(56, -56);
-      console.log(xc, yc);
+      const yc = randomNumber([
+        -20, -15, -25, -30, -35, -40, -12, 30, 35, 50, 40, 55,
+      ]) as number;
+      const xc = randomNumber([
+        -40, -55, -60, -63, -50, -50, -50, -60, -60, -60, -46, -55, -40, 20, 35,
+        25, 30, 33, 40,
+      ]) as number;
+      const sizen = randomNumber([30, 35, 31, 40, 24, 25, 16, 33]);
+      const rota = randomNumber([
+        10, 0, -10, -5, -3, 0, 50, 30, 20, -20, 25, -25, -15, 15, 90, -90, -50,
+        50,
+      ]);
+      const opc = randomNumber([0.6, 1, 0.9, 1, 0.8, 1, 1]);
       $i.css({
         "z-index": 999,
         top: y + yc,
         left: x + xc,
-        "font-size": "30px",
+        "font-size": sizen + "px",
         "user-select": "none",
         position: "absolute",
+        transform: "rotate(" + rota + "deg)",
+        opacity: opc,
       });
       $("body").append($i);
       $i.animate(
