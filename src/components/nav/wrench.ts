@@ -1,17 +1,11 @@
 /*
  * @Author: mfxhb
  * @Date: 2022-11-10 11:42:49
- * @LastEditTime: 2022-11-10 13:13:24
+ * @LastEditTime: 2022-11-11 10:55:00
  * @Description:
  */
 import { Ref, ref } from "vue";
-import { selectListType } from "../typers";
-
-// 导航栏配置列表类型
-interface NavListType {
-  name: string;
-  list: selectListType[];
-}
+import { NavListType } from "../../config/config-typer";
 
 export const navListConf: Ref<NavListType[]> = ref([
   {

@@ -1,19 +1,16 @@
 /*
  * @Author: mfxhb
  * @Date: 2022-11-07 14:42:18
- * @LastEditTime: 2022-11-07 15:37:37
+ * @LastEditTime: 2022-11-11 10:57:40
  * @Description:
  */
 import { App } from "vue";
 import type { InjectionKey } from "vue";
+import { GlobalConfig } from "./config-typer";
 
-interface conf_typer {
-  welcomeText: string;
-}
-
-export const CONFIG_KEY = Symbol() as InjectionKey<conf_typer>;
-const CONFIG_VALUE = {
-  welcomeText: "Welcome to mfxhb's home page.", // 欢迎语
+export const CONFIG_KEY = Symbol() as InjectionKey<GlobalConfig>;
+const CONFIG_VALUE: GlobalConfig = {
+  welcomeText: "Welcome to mfxhb's home page.",
 };
 
 export const useConfig = {

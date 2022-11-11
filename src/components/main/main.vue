@@ -1,24 +1,29 @@
 <!--
  * @Author: mfxhb
  * @Date: 2022-11-08 14:47:05
- * @LastEditTime: 2022-11-10 08:56:03
+ * @LastEditTime: 2022-11-11 14:09:23
  * @Description: 
 -->
 <template>
   <div class="main">
-    main
-    <button class="cus-button">保存</button>
-    <button class="cus-button">保存</button>
+    <component :is="currentCommonId"></component>
   </div>
 </template>
 
 <script lang="ts">
+import { storeToRefs } from "pinia";
 import { defineComponent } from "vue";
+import { useRoutes } from "../../pinia/routes/routes";
+import { components } from "../../config/routes";
 
 export default defineComponent({
   name: "Appmain",
+  components: components,
   setup() {
-    return {};
+    // qk 变量
+    const store = useRoutes();
+    const { currentCommonId } = storeToRefs(store);
+    return { currentCommonId };
   },
 });
 </script>

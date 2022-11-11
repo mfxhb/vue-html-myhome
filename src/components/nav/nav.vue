@@ -1,7 +1,7 @@
 <!--
  * @Author: mfxhb
  * @Date: 2022-11-08 14:35:05
- * @LastEditTime: 2022-11-10 11:43:44
+ * @LastEditTime: 2022-11-11 14:03:12
  * @Description: 
 -->
 <template>
@@ -28,20 +28,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, ref, readonly, Ref } from "vue";
+import { defineComponent, inject, ref } from "vue";
 import { CONFIG_KEY } from "../../config/config";
-import { navListConf } from "./wrench";
+import { useRoutes } from "../../pinia/routes/routes";
+import { navListConf } from "../../config/routes";
 
 export default defineComponent({
   name: "NavPage",
   setup() {
     // qk 变量
+    const store = useRoutes();
     const { welcomeText } = inject(CONFIG_KEY, { welcomeText: "" });
     // nav列表
     const navList = navListConf;
     // qk 方法
     const selected = (value: string) => {
-      console.log("当前选中了:", value);
+      store.setCommonId(value);
     };
     return { welcomeText, navList, selected };
   },

@@ -1,7 +1,7 @@
 <!--
  * @Author: mfxhb
  * @Date: 2022-11-07 09:46:31
- * @LastEditTime: 2022-11-10 16:28:00
+ * @LastEditTime: 2022-11-11 15:12:22
  * @Description: 
 -->
 <template>
@@ -28,6 +28,7 @@ import { windowClick, openClickCur } from "./utils/wrench";
 export default defineComponent({
   name: "App",
   mounted() {
+    // qk 小人
     Sakana.init({
       el: ".sakana-box", // 启动元素 node 或 选择器
       scale: 0.3, // 缩放倍数
@@ -35,7 +36,6 @@ export default defineComponent({
     });
     // qk 监听鼠标点击事件
     window.addEventListener("click", windowClick);
-    //
   },
   unmounted() {
     // qk 销毁鼠标事件

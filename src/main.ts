@@ -1,14 +1,15 @@
 /*
  * @Author: BORING GHOST
  * @Date: 2022-11-07 09:46:31
- * @LastEditTime: 2022-11-10 16:10:40
+ * @LastEditTime: 2022-11-11 10:06:03
  * @Description:
  */
 import { createApp } from "vue";
 import "normalize.css"; // 浏览器兼容
 import "./styles/index.less"; // 项目样式
 import { useConfig } from "./config/config"; // 全局配置
-import $ from "jquery";
+import $ from "jquery"; // jquery
+import usePinia from "./pinia/usePinia"; // pinia
 
 // 全局组件
 import nav from "./components/nav/nav.vue";
@@ -22,4 +23,5 @@ app.component("cus-main", appMain);
 app.component("cus-select", selectc);
 app.provide("jQuery", $);
 app.use(useConfig);
+app.use(usePinia);
 app.mount("#app");
