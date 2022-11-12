@@ -1,7 +1,7 @@
 <!--
  * @Author: mfxhb
  * @Date: 2022-11-11 11:18:21
- * @LastEditTime: 2022-11-12 14:28:25
+ * @LastEditTime: 2022-11-12 18:44:05
  * @Description: 简历
 -->
 <template>
@@ -14,6 +14,7 @@
 
 <script lang="ts">
 import { defineComponent, inject } from "vue";
+import { test } from "../../../api/loser/loser-api";
 
 export default defineComponent({
   name: "Resume",
@@ -21,12 +22,13 @@ export default defineComponent({
     // qk 变量
     const $ = inject("jQuery") as any;
     // qk 接口
-    function testApi() {
-      const url =
-        "https://www.fastmock.site/mock/46116e0d721209aaafcf49c5a8d8c035/test/test";
-      $.get(url, function (res: any) {
-        console.log(res);
-      });
+    async function testApi() {
+      try {
+        const result = await test();
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
     }
     return { testApi };
   },
