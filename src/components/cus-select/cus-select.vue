@@ -1,7 +1,7 @@
 <!--
  * @Author: mfxhb
  * @Date: 2022-11-09 10:20:32
- * @LastEditTime: 2022-11-10 19:59:21
+ * @LastEditTime: 2022-11-12 14:45:41
  * @Description: dsa
  * bg: 背景色
  * bg_hover: hover状态下的背景色
@@ -29,7 +29,7 @@
     <div
       ref="current_selectBDRef"
       :style="{ height: selectBoxHeight }"
-      class="select-bd"
+      class="select-bd siyuan_"
     >
       <template v-for="item in selectList" :key="item.value">
         <!-- select-clear-id:用来清除选项框的时候用的识别id -->
@@ -49,7 +49,7 @@
 import { defineComponent, ref, PropType } from "vue";
 import { clearBorderT } from "../../utils/wrench";
 
-import { selectListType } from "../typers";
+import { NavSelectItem } from "../../config/config-typer";
 
 export default defineComponent({
   name: "cusSelect",
@@ -71,7 +71,7 @@ export default defineComponent({
       required: true,
     },
     selectList: {
-      type: Array as PropType<selectListType[]>,
+      type: Array as PropType<NavSelectItem[]>,
       required: true,
     },
     isOpenRoundMargin: {

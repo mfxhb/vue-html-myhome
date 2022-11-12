@@ -8,6 +8,19 @@
 给自己写的!好看舒服方便自己的主页!
 ```
 
+# 补充
+
+- 补充被忽略的静态文件
+
+```
+//src\config\https.ts
+// 中文字体
+const siyuanText = "";
+
+export { siyuanText };
+
+```
+
 # 启动
 
 一: 拉取代码

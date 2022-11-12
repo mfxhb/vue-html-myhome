@@ -1,9 +1,11 @@
 /*
  * @Author: mfxhb
  * @Date: 2022-11-07 15:59:12
- * @LastEditTime: 2022-11-10 13:11:12
+ * @LastEditTime: 2022-11-12 14:23:18
  * @Description:
  */
+import { siyuanText } from "./https";
+
 export default {
   // 主题色
   "@theme-color-1": "#4b6584",
@@ -37,4 +39,5 @@ export default {
   "@select-bd-selected-bg": "@theme-color-1", // 选中时的背景色
   "@select-border-color": "#92d2ba", // 边框颜色
   "@select-hover-color": "@theme-color-1", // hover时的颜色
+  "@siyuanText": `url(${siyuanText})`,
 };

@@ -7,6 +7,7 @@
   },
   "include": [
     "vite.config.ts",
-    "./src/config/themes.ts"
+    "./src/config/themes.ts",
+    "./src/config/https.ts"
   ]
 }

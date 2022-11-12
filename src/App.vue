@@ -1,7 +1,7 @@
 <!--
  * @Author: mfxhb
  * @Date: 2022-11-07 09:46:31
- * @LastEditTime: 2022-11-11 15:12:22
+ * @LastEditTime: 2022-11-12 14:42:15
  * @Description: 
 -->
 <template>
@@ -13,10 +13,6 @@
       <cus-main></cus-main>
     </div>
     <div class="sakana-box"></div>
-    <!-- 提示 -->
-    <div class="tiptext">
-      JieShi:许多地方用的是英文或者拼音,因为我用的字体在这两个环境下显示的特别的舒服!
-    </div>
   </div>
 </template>
 
@@ -58,13 +54,5 @@ export default defineComponent({
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  .tiptext {
-    position: fixed;
-    bottom: 0;
-    left: 10px;
-    font-size: 14px;
-    color: #d1d8e0;
-    user-select: none;
-  }
 }
 </style>
