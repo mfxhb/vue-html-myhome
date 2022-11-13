@@ -1,14 +1,16 @@
 <!--
  * @Author: mfxhb
  * @Date: 2022-11-11 11:18:21
- * @LastEditTime: 2022-11-12 18:44:05
+ * @LastEditTime: 2022-11-13 14:59:15
  * @Description: 简历
 -->
 <template>
   <div class="Resume__">
-    <div class="siyuan_">撒旦发我是对方' 爱上对方公司</div>
-    爱上对方公司
-    <button @click="testApi" class="siyuan_">测试</button>
+    <!-- 标题 -->
+    <div class="title siyuan_">
+      <span class="text-1">简历计划</span>
+      求职前端
+    </div>
   </div>
 </template>
 
@@ -35,4 +37,14 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped lang="less">
+.Resume__ {
+  .title {
+    .text-1 {
+      color: #33cccc;
+      font-size: 30px;
+      margin-right: 25px;
+    }
+  }
+}
+</style>

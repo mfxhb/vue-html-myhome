@@ -16,8 +16,10 @@
 //src\config\https.ts
 // 中文字体
 const siyuanText = "";
+// axiosBaseUrl
+const axiosBaseURL ="";
 
-export { siyuanText };
+export { siyuanText,axiosBaseURL};
 
 ```
 
