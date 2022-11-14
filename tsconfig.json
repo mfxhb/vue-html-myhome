@@ -21,7 +21,7 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "src/sakala.js"
+    "src/sakala.js",
   ],
   "references": [
     {

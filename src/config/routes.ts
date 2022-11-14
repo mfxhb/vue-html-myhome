@@ -1,7 +1,7 @@
 /*
  * @Author: mfxhb
  * @Date: 2022-11-11 09:29:39
- * @LastEditTime: 2022-11-11 14:17:39
+ * @LastEditTime: 2022-11-14 16:24:54
  * @Description: 新添加的页面,可直接在这配置,配置完后会直接更新
  */
 import { defineAsyncComponent } from "vue";
@@ -13,14 +13,19 @@ const staticRoutes: StaticRoutesType[] = [
     name: "I'm loser",
     pagelist: [
       {
-        label: "个人简历",
+        label: "Jian",
         value: "Resume",
         common: defineAsyncComponent(
           () => import("../view/Losers/resume/resume.vue")
         ),
       },
+    ],
+  },
+  {
+    name: "Project",
+    pagelist: [
       {
-        label: "项 目",
+        label: "project",
         value: "Project",
         common: defineAsyncComponent(
           () => import("../view/Losers/projects/projects.vue")
